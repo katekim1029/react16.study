@@ -10,6 +10,7 @@ const TodoList = ({ todos, onCheck, onRemove }) => {
             text = {todo.text}
             onCheck = {onCheck}
             onRemove = {onRemove}
+            todo = {todo}
         />
     ));
     // 배열에 key 가 설정되어있다면

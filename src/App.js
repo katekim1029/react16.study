@@ -4,7 +4,27 @@ import TodoList from './components/TodoList';
 
 import './App.css';
 
+// 함수를 선언후 바로 호출하는, IIFE 패턴
+const bulkTodos = (() => {
+  const array = [];
+  for (let i = 0; i < 5000; i++) {
+    array.push({
+      id: i,
+      text: `Todo #${i}`,
+      checked: false
+    });
+  }
+  return array;
+})();
+
 class App extends Component {
+    
+    id = 5000;
+    state = {
+        todos: bulkTodos
+    };
+
+    /*
     id = 3;
 
     // state 의 초깃값을 설정합니다.
@@ -28,6 +48,7 @@ class App extends Component {
             }
         ]
     };
+    */
 
     handleCreate = text => {
         // 데이터 만들고
