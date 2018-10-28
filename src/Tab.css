@@ -1,0 +1,18 @@
+.Tabs .select-tabs {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.Tabs .select-tabs .tab-item {
+    flex: 1;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+.Tabs .select-tabs .tab-item.active,
+.Tabs .select-tabs .tab-item:hover {
+    background: black;
+    color: white;
+}
