@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
-import Layout from './Layout';
-import BlogPostForm from './BlogPostForm';
-import LoginForm from './LoginForm';
-import Output from './Output';
+import { withStateHandlers } from 'recompose';
+
+import Counter from './Counter';
+import Form from './Form';
+import List from './List';
 
 class App extends Component {
-    state = {
-        login: null,
-        blogPost: null
-    }
-
-    handleSubmitLogin = login => {
-        this.setState({
-            login
-        });
-    };
-
-    handleSubmitBlogPost = blogPost => {
-        this.setState({
-            blogPost
-        });
-    };
-
     render() {
-        const { blogPost, login } = this.state;
         return (
-            <Layout 
-                login = {<LoginForm onSubmit={this.handleSubmitLogin} />}
-                blogPost = {<BlogPostForm onSubmit={this.handleSubmitBlogPost} />}
-                output = {<Output blogPost={blogPost} login={login} />}
-            />
+            <div>
+                <Counter />
+                <hr />
+                <Form onAdd={this.props.addToList} />
+                <List list={this.props.list} />
+            </div>
         );
     }
 }
 
-export default App;
+const enhance = withStateHandlers(
+    { list: [] },
+    {
+        addToList: state => data => ({
+            list: state.list.concat(data)
+        })
+    }
+);
+
+export default enhance(App);
