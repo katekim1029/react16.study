@@ -11,6 +11,7 @@ const AppProvider = ({ contexts, children }) => contexts.reduce(
     }),
     children
 );
+// React.createElement() element를 JSX로 만드는게 아니라 javascript로만 만들게 될 때 사용된다 
 
 const App = () => {
     return (
@@ -25,5 +26,32 @@ const App = () => {
         </AppProvider>
     );
 };
+
+// const App = () => {
+//     return (
+//         <AnotherProvider>
+//             <SampleProvider>
+//                 <div className="panes">
+//                     <LeftPane />
+//                     <RightPane />
+//                 </div>
+//                 <Counter />
+//             </SampleProvider>
+//         </AnotherProvider>
+//     );
+// };
+
+
+// const App = () => {
+//     return (
+//         <SampleProvider>
+//             <div className="panes">
+//                 <LeftPane />
+//                 <RightPane />
+//             </div>
+//             <Counter />
+//         </SampleProvider>
+//     );
+// };
 
 export default App;

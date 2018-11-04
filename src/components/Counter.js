@@ -1,6 +1,7 @@
 import React from 'react';
 import { AnotherConsumer } from '../contexts/another';
 import { fromRenderProps } from 'recompose';
+// recompose의 fromRenderProps라는 함수는 Render Props를 사용하는 컴포넌트를 정말 쉽게 HOC로 변화해준다
 
 const Counter = ({ number, increment}) => {
     return (
@@ -17,6 +18,7 @@ const enhance = fromRenderProps(AnotherConsumer, ({ state, actions }) => ({
   }));
 
 export default enhance(Counter);
+
 
 // import React from 'react';
 // import { useAnother } from '../contexts/another';

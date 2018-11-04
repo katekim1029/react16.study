@@ -36,19 +36,20 @@ class Sends extends Component {
 // HOC useSample 사용
 export default useSample(Sends);
 
+
 // import { SampleConsumer } from '../contexts/sample';
+
+// actions는 handleSubmit에서 사용해야 하는데 Render Props는 JSX단에서 사용하는 거라서 방법이 없다 그래서 SendsContainer라는 컴포넌트를 만들어서 Sends에게 value와 setValue를 props로 넣어줌
 
 // :: Consumer 를 사용하여 context 값을 전달해준 컨테이너 컴포넌트
 // const SendsContainer = () => (
 //     <SampleConsumer>
-//         {
-//             ({ state, actions }) => (
-//                 <Sends
-//                     value = { state.value }
-//                     setValue = { actions.setValue }
-//                 />
-//             )
-//         }
+//         {({ state, actions }) => (
+//             <Sends
+//                 value = { state.value }
+//                 setValue = { actions.setValue }
+//             />
+//         )}
 //     </SampleConsumer>
 // );
 
